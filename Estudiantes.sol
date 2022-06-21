@@ -12,9 +12,9 @@ contract Colegio {
     string [] private Nom_Materias;
     // Constructor con sus variables
     constructor(string memory Nombre_, string memory Apellido_, string memory Curso_) {
-        Nombre = Nombre;
-        Apellido = Apellido;
-        Curso = Curso;
+        Nombre = Nombre_;
+        Apellido = Apellido_;
+        Curso = Curso_;
         Profesor = msg.sender;
     }
     //devuelve el apellido del estudiante como string.
