@@ -21,7 +21,7 @@ contract Colegio {
     function apellido() public view returns (string memory) {
         return Apellido;
     }
-    //devuelve el nombre y el apellido del estudiante como string.
+    //Llama a la funcion AppendString, que toma el nombre y el apellido, los junta y devuelve el resultado como string
     function nombre_completo() public view returns (string memory) {
         return AppendString(Nombre, " ", Apellido);
     }
@@ -46,7 +46,7 @@ contract Colegio {
         require (Notas_De_Las_Materias[_Materia] >= 60);
         return true; 
     }
-    //devuelve un entero con el promedio del alumno.
+    //Toma la cantidad de items en el mapping, suma todas las notas y las divide por la cantidad de items y devuelve un entero con el promedio del alumno.
     function promedio() public view returns (uint) {
         uint _CantItems = Nom_Materias.length;
         uint _NotaParaPromedio;
@@ -57,7 +57,7 @@ contract Colegio {
         _NotaFinal = _NotaParaPromedio / _CantItems;
         return _NotaFinal;
     }
-    // public pure es para que no lea ni modifica las variables
+    //Junta lo que le pases, idealmente a y c son el nombre y el apellido respectivamente, b es un espacio. Devuelve el nombre y el apellido juntos como string
     function AppendString(string memory a, string memory b, string memory c) public pure returns (string memory) {
         return string(abi.encodePacked(a,b,c));
     }
